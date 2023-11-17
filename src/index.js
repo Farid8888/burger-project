@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux' 
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 
@@ -44,9 +44,9 @@ const app =(
 </BrowserRouter>
 </Provider>)
 
-
-ReactDOM.render(
-  app,document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  app
 );
 
 // If you want to start measuring performance in your app, pass a function
